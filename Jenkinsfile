@@ -18,7 +18,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/yassinesah/testrepo'
             }
         }
-    }
         stage('Send SNS Notification') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-sns', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
@@ -34,4 +33,5 @@ pipeline {
                 }
             }
         }
+    }
 }
