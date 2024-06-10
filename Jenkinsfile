@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM('* * * * *') // This checks the repo every minute
-        // OR use GitHub webhook if integrated
+        githubPush()
     }
 
     stages {
